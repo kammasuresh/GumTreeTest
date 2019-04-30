@@ -1,5 +1,6 @@
 package com.gumtree.address.book.userStoryValidation;
 
+import java.util.Date;
 import java.util.List;
 
 import com.gumtree.address.book.model.AddressBook;
@@ -20,5 +21,19 @@ public class AddressBookUserStoryValidation  {
 	        return count;
 	    }
 	
+       //Who is the oldest person in the address book?
+	
+	 public String getTheOldestPersonInAddressBook() throws Exception {
+	        String name = null;
+	        List<AddressBook> addressBooks = addressBookService.getAddressBookList();
+	        Date maxDate = addressBooks.stream().map(u -> u.getBirthDate()).min(Date::compareTo).get();
 
+	        for (AddressBook addressbook : addressBooks) {
+	            if (addressbook.getBirthDate().equals(maxDate)) {
+	                name = addressbook.getName();
+	                break;
+	            }
+	        }
+	        return name;
+	    }
 }
