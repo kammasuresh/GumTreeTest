@@ -1,5 +1,7 @@
 package com.gumtree.address.book.userStoryValidation;
 
+import static org.junit.Assert.*;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -23,4 +25,14 @@ public class AddressBookUserStoryValidationTest {
 	        assertEquals(3, addressBookUserStoryValidation.getHowManyGender(gender.getValue()));
 	        assertEquals(0, addressBookUserStoryValidation.getHowManyGender("boo"));
 	    }
+	    //	       // How many Females are in the address book?
+
+	    @Test
+	    public void testGetHowManyFemaleGender() throws Exception {
+
+	        Gender gender = Gender.FEMALE;
+	        assertEquals(2, addressBookUserStoryValidation.getHowManyGender(gender.getValue()));
+	        assertEquals(0, addressBookUserStoryValidation.getHowManyGender("boo"));
+	    }
+
 }
