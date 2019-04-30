@@ -25,5 +25,12 @@ public class AddressBookTest {
 	    public void testGetName() throws Exception {
 	        assertEquals("Fred", addressBook.getName());
 	    }
-
+	    @Test
+	    public void testGetGender() throws Exception {
+	        assertEquals("Male", addressBook.getGender());
+	    }
+	    @Test
+	    public void testGetBirthDate() throws Exception {
+	        assertEquals("Wed Aug 14 00:00:00 BST 1974", addressBook.getBirthDate().toString());
+	    }
 }
