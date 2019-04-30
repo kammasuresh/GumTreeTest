@@ -1,10 +1,13 @@
 package com.gumtree.address.book.model;
 
+import static org.junit.Assert.*;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 
 import org.junit.Before;
+import org.junit.Test;
 
 public class AddressBookTest {
 	 private AddressBook addressBook;
