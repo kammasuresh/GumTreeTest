@@ -40,5 +40,16 @@ public class AddressBookUserStoryValidationTest {
 	    public void testGetTheOldestPersonInAddressBook() throws Exception {
 	        assertEquals("Wes Jackson", addressBookUserStoryValidation.getTheOldestPersonInAddressBook());
 	    }
+	    // How many days older is Bill than Paul?*/
+
+	    @Test
+	    public void testGetDayDiffBetweenContacts() throws Exception {
+	        assertEquals(2862, addressBookUserStoryValidation.getDayDiffBetweenContacts("Bill McKnight", "Paul Robinson"));
+	    }
+         //      How many days older is Bill than Paul?*/Null pointer Exception
+	    @Test(expected = NullPointerException.class)
+	    public void testGetDayDiffBetweenContactsWithException() throws Exception {
+	        assertEquals(0, addressBookUserStoryValidation.getDayDiffBetweenContacts("Foo", "Bar"));
+	    }
 
 }

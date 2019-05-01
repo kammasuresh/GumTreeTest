@@ -17,4 +17,9 @@ public class HelperTest {
     public void testConvertStringToDateWithException() throws ParseException {
         Helper.convertStringToDate("FOO102016");
     }
+    
+    @Test
+    public void testgetTimeDiffFromTwoDate() throws Exception {
+        assertEquals(2862,2862);
+    }
 }
