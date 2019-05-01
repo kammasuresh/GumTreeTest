@@ -34,7 +34,7 @@ public class AddressBookUserStoryValidationTest {
 	        assertEquals(2, addressBookUserStoryValidation.getHowManyGender(gender.getValue()));
 	        assertEquals(0, addressBookUserStoryValidation.getHowManyGender("boo"));
 	    }
-	    //     Who is the oldest person in the address book?
+	    // Who is the oldest person in the address book?
 
 	    @Test
 	    public void testGetTheOldestPersonInAddressBook() throws Exception {
