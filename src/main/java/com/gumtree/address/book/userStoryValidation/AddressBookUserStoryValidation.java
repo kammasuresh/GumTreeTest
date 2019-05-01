@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.gumtree.address.book.model.AddressBook;
 import com.gumtree.address.book.service.AddressBookServiceImpl;
+import com.gumtree.address.book.utils.Helper;
 
 public class AddressBookUserStoryValidation  {
 	 
@@ -36,4 +37,24 @@ public class AddressBookUserStoryValidation  {
 	        }
 	        return name;
 	    }
-}
+	 //Who is the oldest person in the address book?
+	 public long getDayDiffBetweenContacts(String contactA, String contactB) throws Exception {
+	        List<AddressBook> addressBooks = addressBookService.getAddressBookList();
+	        AddressBook a = new AddressBook();
+	        AddressBook b = new AddressBook();
+
+	        addressBooks.forEach(item -> {
+	            if (contactA.equals(item.getName())) {
+	                a.setBirthDate(item.getBirthDate());
+	            }
+	        });
+	        addressBooks.forEach(item -> {
+	            if (contactB.equals(item.getName())) {
+	                b.setBirthDate(item.getBirthDate());
+	            }
+	        });
+
+	        return Helper.getTimeDiffFromTwoDate(a.getBirthDate(), b.getBirthDate());
+	    }
+	}
+
